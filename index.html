@@ -12,14 +12,16 @@
 </head>
 <body>
     <main>
+        <!-- User infos to determine ticket price -->
         <h1>Calcola il prezzo del tuo biglietto</h1>
         <div>
+            <!-- User name -->
             <label for="user-name">Nome Cognome</label>
             <input type="text" id="user-name">
-
+            <!-- Kilometres -->
             <label for="kilometres">Km da percorrere</label>
             <input type="number" id="kilometres">
-
+            <!-- User age -->
             <label for="user-age">Fascia d'età</label>
             <select id="user-age">
                 <option value=""></option>
@@ -27,13 +29,14 @@
                 <option value="maggiorenne">Maggiorenne</option>
                 <option value="over65">Over 65</option>
             </select>
+            <!-- Submit button -->
             <button type="submit" id="submit-button">Conferma</button>
         </div>
         <!-- Ticket details -->
-        <div id="passenger"></div>
-        <div id="age"></div>
-        <div id="km"></div>
-        <div id="ticket-price"></div>
+        <div class="passenger"></div>
+        <div class="age"></div>
+        <div class="km"></div>
+        <div class="ticket-price"></div>
         <h2 id="message"></h2>
     </main>
     <script src="js/script.js"></script>

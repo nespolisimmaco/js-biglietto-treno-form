@@ -56,19 +56,29 @@ submitBtn.addEventListener("click", function () {
         } else if (age === "maggiorenne") {
             age = "Maggiorenne"
         }
-
-        message = "Buon Viaggio";
+        message = "Buon Viaggio!";
     } else {
         message = "Errore! Inserisci i dati correttamente.";
     }
+    // Ripulisco i campi input
+    userNameInput.value = "";
+    kilometresInput.value = "";
+    ageInput.value = "";
     // OUTPUT
+    // Nome
+    const passengerName = document.querySelector(".passenger");
+    passengerName.innerHTML = userName;
+    // Età
+    const userAge = document.querySelector(".age");
+    userAge.innerHTML = age;
+    // Chilometri
+    const kmToGo = document.querySelector(".km");
+    kmToGo.innerHTML = kilometres + "km";
     // Prezzo finale con massimo due decimali
     let fixedPrice = ticketPrice.toFixed(2);
     console.log("Prezzo finale con 2 decimali:", fixedPrice);
-    document.getElementById("passenger").innerHTML = userName;
-    document.getElementById("age").innerHTML = age;
-    document.getElementById("km").innerHTML = kilometres + "km";
-    document.getElementById("ticket-price").innerHTML = fixedPrice + "€";
+    const finalPrice = document.querySelector(".ticket-price");
+    finalPrice.innerHTML = fixedPrice + "€";
     // Messaggio all'utente
     document.getElementById("message").innerHTML = message;  
 })
