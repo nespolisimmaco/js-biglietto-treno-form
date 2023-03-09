@@ -13,3 +13,16 @@ body {
 .ms_wrapper {
     background-color: #ED9B40;
 }
+
+.ms_ticket-wrapper {
+    background-color: #01172F;
+}
+
+.ms_wrapper-header {
+    background-color: #FFEEDB;
+}
+
+/* Train image */
+#train {
+    height: 250px;
+}

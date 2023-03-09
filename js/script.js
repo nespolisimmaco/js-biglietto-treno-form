@@ -46,10 +46,14 @@ submitBtn.addEventListener("click", function () {
         console.log(minorsDiscount, eldersDiscount);
     
         if (age === "minorenne") {
+            const initialPrice = document.querySelector(".initial-price");
+            initialPrice.innerHTML = ticketPrice.toFixed(2) + "€";
             ticketPrice -= minorsDiscount;
-            console.log("Prezzo con sconto minorenni", ticketPrice);
             age = "Minorenne"; 
+            console.log("Prezzo con sconto minorenni", ticketPrice);
         } else if (age === "over65") {
+            const initialPrice = document.querySelector(".initial-price");
+            initialPrice.innerHTML = ticketPrice.toFixed(2) + "€";
             ticketPrice -= eldersDiscount;
             console.log("Prezzo con sconto over 65:", ticketPrice);
             age = "Over 65";
@@ -69,11 +73,15 @@ submitBtn.addEventListener("click", function () {
     const passengerName = document.querySelector(".passenger");
     passengerName.innerHTML = userName;
     // Età
-    const userAge = document.querySelector(".age");
-    userAge.innerHTML = age;
-    // Chilometri
-    const kmToGo = document.querySelector(".km");
-    kmToGo.innerHTML = kilometres + "km";
+    document.querySelector(".age").innerHTML = age
+    // Carrozza
+    const carriageNumber = Math.floor(Math.random() * 10) + 1;
+    console.log(carriageNumber);
+    document.querySelector(".carriage").innerHTML = carriageNumber;
+    // Posto
+    const seatNumber = Math.floor(Math.random() * 50) + 1;
+    console.log(seatNumber);
+    document.querySelector(".seat").innerHTML = seatNumber;
     // Prezzo finale con massimo due decimali
     let fixedPrice = ticketPrice.toFixed(2);
     console.log("Prezzo finale con 2 decimali:", fixedPrice);
