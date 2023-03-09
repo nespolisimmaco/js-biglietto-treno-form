@@ -11,6 +11,8 @@
 let userName = "";
 let kilometres = 0;
 let age = "";
+// Prezzo del biglietto
+let ticketPrice = 0;
 // Messaggio per l'utente
 let message = "";
 // Quando viene cliccato il bottone conferma
@@ -35,7 +37,7 @@ submitBtn.addEventListener("click", function () {
     if((userName != "") && !isNaN(kilometres) && (age != "")) {
         // LOGICA
         // Il prezzo del biglietto è definito in base ai chilometri (0.21€ al km)
-        let ticketPrice = 0.21 * kilometres;
+        ticketPrice = 0.21 * kilometres;
         console.log("Prezzo del biglietto:", ticketPrice);
         // Sconto del 20% per minorenni
         const minorsDiscount = 0.2 * ticketPrice;
@@ -43,24 +45,31 @@ submitBtn.addEventListener("click", function () {
         const eldersDiscount = 0.4 * ticketPrice;
         console.log(minorsDiscount, eldersDiscount);
     
-        if(age === "minorenne") {
+        if (age === "minorenne") {
             ticketPrice -= minorsDiscount;
-            console.log("Prezzo con sconto minorenni", ticketPrice); 
-        }else if(age === "over65") {
+            console.log("Prezzo con sconto minorenni", ticketPrice);
+            age = "Minorenne"; 
+        } else if (age === "over65") {
             ticketPrice -= eldersDiscount;
             console.log("Prezzo con sconto over 65:", ticketPrice);
+            age = "Over 65";
+        } else if (age === "maggiorenne") {
+            age = "Maggiorenne"
         }
+
         message = "Buon Viaggio";
-        
     } else {
         message = "Errore! Inserisci i dati correttamente.";
     }
     // OUTPUT
     // Prezzo finale con massimo due decimali
     let fixedPrice = ticketPrice.toFixed(2);
-    document.getElementById("user-age").innerHTML += age;
-    document.getElementById("kilometres").innerHTML += kilometres + "km";
-    document.querySelector("ticket-price").innerHTML += fixedPrice + "€";
-    document.getElementById("message").innerHTML = message;
+    console.log("Prezzo finale con 2 decimali:", fixedPrice);
+    document.getElementById("passenger").innerHTML = userName;
+    document.getElementById("age").innerHTML = age;
+    document.getElementById("km").innerHTML = kilometres + "km";
+    document.getElementById("ticket-price").innerHTML = fixedPrice + "€";
+    // Messaggio all'utente
+    document.getElementById("message").innerHTML = message;  
 })
 
