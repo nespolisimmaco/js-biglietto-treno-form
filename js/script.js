@@ -82,4 +82,13 @@ submitBtn.addEventListener("click", function () {
     // Messaggio all'utente
     document.getElementById("message").innerHTML = message;  
 })
-
+// Quando viene cliccato il bottone annulla
+const cancelBtn = document.getElementById("cancel-button");
+cancelBtn.addEventListener("click", function () {
+    // Elimino nome
+    document.getElementById("user-name").value = "";
+    // Elimino chilometri
+    document.getElementById("kilometres").value = "";
+    // Elimino età
+    document.getElementById("user-age").value = "";
+})
