@@ -1,0 +1,15 @@
+/* RESET */
+img {
+    max-width: 100%;
+}
+
+/* GENERAL */
+body {
+    background-color: #4B8F8C!important;
+    color: white!important;
+}
+
+/* ********** MAIN ********** */
+.ms_wrapper {
+    background-color: #ED9B40;
+}

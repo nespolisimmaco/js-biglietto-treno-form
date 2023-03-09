@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietto del treno</title>
+    <title>Boollet Train</title>
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap -->
@@ -12,28 +12,55 @@
 </head>
 <body>
     <main>
-        <!-- User infos to determine ticket price -->
-        <h1>Calcola il prezzo del tuo biglietto</h1>
-        <div>
-            <!-- User name -->
-            <label for="user-name">Nome Cognome</label>
-            <input type="text" id="user-name">
-            <!-- Kilometres -->
-            <label for="kilometres">Km da percorrere</label>
-            <input type="number" id="kilometres">
-            <!-- User age -->
-            <label for="user-age">Fascia d'età</label>
-            <select id="user-age">
-                <option value=""></option>
-                <option value="minorenne">Minorenne</option>
-                <option value="maggiorenne">Maggiorenne</option>
-                <option value="over65">Over 65</option>
-            </select>
-            <!-- Submit button -->
-            <button type="submit" id="submit-button">Conferma</button>
-            <!-- Cancel button -->
-            <button type="submit" id="cancel-button">Annulla</button>
+        <!-- Main Container -->
+        <div class="container">
+            <!-- User infos to determine ticket price -->
+            <h1 class="text-center my-4">Boollet Train</h1>
+            <!-- Wrapper -->
+            <div class="ms_wrapper p-4 rounded">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <h2 class="text-center">Inserire i dati</h2>
+                    <!-- Row -->
+                    <div class="row mb-3">
+                        <!-- Input fields -->
+                        <!-- User name -->
+                        <div class="col-4 text-center d-flex flex-column">
+                            <label for="user-name" class="fs-5">Nome Cognome</label>
+                            <input type="text" id="user-name">
+                        </div>
+                        <!-- Kilometres -->
+                        <div class="col-4 text-center d-flex flex-column">
+                            <label for="kilometres" class="fs-5">Km da percorrere</label>
+                            <input type="number" id="kilometres">
+                        </div>
+                        <div class="col-4 text-center d-flex flex-column">
+                            <!-- User age -->
+                            <label for="user-age" class="fs-5">Fascia d'età</label>
+                            <select id="user-age">
+                                <option value=""></option>
+                                <option value="minorenne">Minorenne</option>
+                                <option value="maggiorenne">Maggiorenne</option>
+                                <option value="over65">Over 65</option>
+                            </select>
+                        </div>
+                        <!-- End Input fields -->
+                    </div>
+                    <!-- End Row -->
+                    <!-- Buttons -->
+                    <div class="ms_buttons text-center">
+                        <!-- Submit button -->
+                        <button type="submit" id="submit-button" class="btn btn-primary">Conferma</button>
+                        <!-- Cancel button -->
+                        <button type="submit" id="cancel-button" class="btn btn-danger">Annulla</button>
+                    </div>
+                    <!-- End Buttons -->
+                </div>
+                <!-- End Container --> 
+            </div>
+            <!-- End Wrapper -->
         </div>
+        <!-- End Main Container -->
         <!-- Ticket details -->
         <div class="passenger"></div>
         <div class="age"></div>
