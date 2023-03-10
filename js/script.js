@@ -59,6 +59,7 @@ submitBtn.addEventListener("click", function () {
             age = "Over 65";
         } else if (age === "maggiorenne") {
             age = "Maggiorenne"
+            document.querySelector(".initial-price").innerHTML = "";
         }
         message = "Buon Viaggio!";
     } else {
